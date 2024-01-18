@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background-color: #5f27cd;
+    padding: 16px 0;
+    color: #fff;
+    display: flex;
+    border-bottom: 16px solid #341f97;
+    justify-content: center;
+    font-style: italic;
+}
+
+header button {
+    margin-left: 16px;
+}
+
+form {
+    background-color: #c8d6e5;
+    padding: 24px 0;
+    text-align: center;
+    display: none;
+}
+
+input, button {
+    padding: 8px;
+}
+
+button {
+    background-color: #009432;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase; /*deixa o conteudo em caixa alta*/
+    color: #fff;
+}
+
+#botao-cancelar {
+    background-color: red;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap; /*quando acaba linha, se cria outra para o conteudo*/
+}
+
+ul li {
+    max-width: 25%;
+    list-style: none; /*retira uma bolinha preta que aparece nas imagens*/
+    position: relative; /*para que o overlay-imagem-link esteja contido no conteudo pai*/
+    max-height: 280px; /*limite do li para enquadrar a img*/
+    overflow-y: hidden; /*corta a imagem no eixo y dentro do max height especificado*/
+}
+
+ul li img {
+    width: 100%;
+}
+
+.overlay-imagem-link {
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0; /*deixa opaco, ou seja, totalmente transparente a legenda*/
+    transition: all ease .5s; /*faz ele aparecer de forma gradual em 0.5seg */
+}
+
+.overlay-imagem-link a{
+    color: #fff;
+    text-decoration: none;
+}
+
+ul li:hover .overlay-imagem-link {
+    opacity: 1; /*quando com o curso, volta a aparecer*/
+}
